@@ -4,7 +4,6 @@ from django.shortcuts import render
 from django.shortcuts import HttpResponse
 
 
-
 def hello(request):
     return HttpResponse("Hello, world!")
 
@@ -42,4 +41,21 @@ def hello3(request):
     return render(
         request,
         'intro/hello.html'
+    )
+
+
+def card(request):
+    return render(
+        request,
+        'intro/card.html',
+    )
+
+
+def name_view_2(request, name):
+    return render(
+        request,
+        'intro/hello2.html',
+        context={
+            "name": name
+        }
     )

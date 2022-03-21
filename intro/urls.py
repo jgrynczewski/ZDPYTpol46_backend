@@ -9,5 +9,7 @@ urlpatterns = [
     path('home3/', views.hello3),
     path('adam/', views.adam),
     path('ewa/', views.ewa),
-    path('<str:name>/', views.name_view),
+    path('card/', views.card),
+    path('v1/<str:name>/', views.name_view),
+    path('v2/<str:name>/', views.name_view_2),
 ]
