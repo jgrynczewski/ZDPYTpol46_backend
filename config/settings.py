@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'newyear.apps.NewyearConfig',
     'mem.apps.MemConfig',
     'linkapp.apps.LinkappConfig',
+    'formapp.apps.FormappConfig',
 ]
 
 MIDDLEWARE = [
