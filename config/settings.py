@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'formapp.apps.FormappConfig',
     'calculator.apps.CalculatorConfig',
     'taskapp.apps.TaskappConfig',
+    'chinook.apps.ChinookConfig',
 ]
 
 MIDDLEWARE = [
@@ -88,7 +89,7 @@ DATABASES = {
     # sqlite
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': BASE_DIR / 'chinook.sqlite',
     }
 
     # # postgres
