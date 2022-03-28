@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -84,10 +85,33 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASES = {
+    # sqlite
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
+
+    # # postgres
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.postgresql_psycopg2',
+    #     'HOST': '127.0.0.1',
+    #     'PORT': '5432',  # nie trzeba, bo 5432 to domyślny port postgres, ale
+    #     # gdyby był inny to już trzeba wskazać
+    #     'NAME': 'zdpytpol46',
+    #     'USER': 'postgres',
+    #     'PASSWORD': 'admin',
+    # }
+
+    # # mysql
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.mysql',
+    #     'HOST': '127.0.0.1',
+    #     'PORT': '3306',  # nie trzeba, bo 3306 to domyślny port mysql, ale
+    #     # gdyby był inny to już trzeba wskazać
+    #     'NAME': 'zdpytpol46',
+    #     'USER': 'root',
+    #     'PASSWORD': os.getenv('MYSQL_PASSW'),
+    # }
 }
 
 
