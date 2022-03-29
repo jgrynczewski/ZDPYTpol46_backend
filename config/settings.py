@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'calculator.apps.CalculatorConfig',
     'taskapp.apps.TaskappConfig',
     'chinook.apps.ChinookConfig',
+    'census.apps.CensusConfig',
 ]
 
 MIDDLEWARE = [
@@ -86,11 +87,17 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASES = {
-    # sqlite
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'chinook.sqlite',
+        'NAME': BASE_DIR / 'census.sqlite',
+    },
+
+    'db2': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db2.sqlite',
     }
+}
+
 
     # # postgres
     # 'default': {
@@ -113,7 +120,7 @@ DATABASES = {
     #     'USER': 'root',
     #     'PASSWORD': os.getenv('MYSQL_PASSW'),
     # }
-}
+# }
 
 
 # Password validation
