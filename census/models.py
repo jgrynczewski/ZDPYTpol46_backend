@@ -23,6 +23,7 @@ class Census(models.Model):
     def __str__(self):
         return f"{self.state} {self.age} {self.sex} {self.pop2008}"
 
+
 class StateFact(models.Model):
     id = models.AutoField(blank=True, primary_key=True)
     name = models.CharField(max_length=128, blank=True, null=True)
