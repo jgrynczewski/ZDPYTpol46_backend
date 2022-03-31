@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'taskapp.apps.TaskappConfig',
     'chinook.apps.ChinookConfig',
     'census.apps.CensusConfig',
+    'formapp2.apps.Formapp2Config',
 ]
 
 MIDDLEWARE = [
