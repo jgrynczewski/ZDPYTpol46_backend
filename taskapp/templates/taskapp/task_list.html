@@ -11,6 +11,7 @@
       {% for task in tasks %}
         <li>
             <a href="{% url 'taskapp:task-detail' task.id %}">{{ task.name }}</a>
+            <a href="{% url 'taskapp:task-update' task.id %}"><button>Zmień</button></a>
         </li>
       {% endfor %}
   </ol>
