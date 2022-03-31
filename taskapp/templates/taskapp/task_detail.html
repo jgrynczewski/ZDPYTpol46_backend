@@ -6,6 +6,7 @@
 </head>
 <body>
     <h2>Zadanie numer {{ task.id }}</h2>
-    {{ task.name }}
+    <p>{{ task.name }}</p>
+    <a href="{% url 'taskapp:task-list' %}"><button>Wróć do listy zadań</button></a>
 </body>
 </html>
