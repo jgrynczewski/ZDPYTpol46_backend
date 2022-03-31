@@ -8,7 +8,9 @@
   <h2>Zadania do zrealizowania</h2>
   <ol>
       {% for task in tasks %}
-        <li>{{ task.name }}</li>
+        <li>
+            <a href="{% url 'taskapp:task-detail' task.id %}">{{ task.name }}</a>
+        </li>
       {% endfor %}
   </ol>
 </body>

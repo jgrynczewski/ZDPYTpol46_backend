@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 
 from taskapp.models import Task
 
@@ -45,7 +45,14 @@ def task_list_view(request):
 
 
 def task_detail_view(request, pk):
-    task = Task.objects.get(pk=pk)
+    # from django.core.exceptions import ObjectDoesNotExist
+    # from django.http import Http404
+    # try:
+    #     task = Task.objects.get(pk=pk)
+    # except ObjectDoesNotExist:
+    #     raise Http404
+
+    task = get_object_or_404(Task, pk=pk)
 
     return render(
         request,
