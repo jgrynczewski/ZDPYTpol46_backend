@@ -61,3 +61,22 @@ def task_detail_view(request, pk):
             'task': task,
         }
     )
+
+
+def task_update_view(request, pk):
+    task = get_object_or_404(Task, pk=pk)
+
+    modified_task = request.POST.get("task")
+    if modified_task:
+        task.name = modified_task
+        task.save()
+
+        return redirect('taskapp:task-list')
+
+    return render(
+        request,
+        'taskapp/task_form.html',
+        context={
+            'task': task,
+        }
+    )
