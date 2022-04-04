@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     'chinook.apps.ChinookConfig',
     'census.apps.CensusConfig',
     'formapp2.apps.Formapp2Config',
+    'viewapp.apps.ViewappConfig',
 ]
 
 MIDDLEWARE = [

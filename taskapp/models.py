@@ -46,9 +46,15 @@ class Framework(models.Model):
     name = models.CharField(max_length=64)
     language = models.ForeignKey('Language', on_delete=models.CASCADE)
 
+    def __str__(self):
+        return f"{self.name} ({self.language})"
+
 
 class Language(models.Model):
     name = models.CharField(max_length=64)
+
+    def __str__(self):
+        return f"{self.name}"
 
 
 class Character(models.Model):
