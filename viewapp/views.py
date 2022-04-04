@@ -1,7 +1,11 @@
 from django.shortcuts import render, HttpResponse
+from django.shortcuts import get_object_or_404
 from django import views
 
 from django.views.generic import TemplateView
+from django.views.generic import DetailView
+
+from viewapp.models import Person
 
 
 # function-based view
@@ -71,3 +75,38 @@ class HelloTemplateView2(TemplateView):
         context = super().get_context_data(**kwargs)
         context["name"] = "Jan"
         return context
+
+
+# A modele ? CRUD
+# 1. Literka R - detal
+
+# function-based view
+def person_detail(request, id):
+    p = get_object_or_404(Person, id=id)
+    return render(
+        request,
+        'viewapp/person_detail.html',
+        context={
+            'person': p
+        }
+    )
+
+
+# class-based view
+class PersonView(views.View):
+    def get(self, request, id):
+        p = get_object_or_404(Person, id=id)
+        return render(
+            request,
+            'viewapp/person_detail.html',
+            context={
+                'person': p,
+            }
+        )
+
+
+# generic view
+class PersonDetailView(DetailView):
+    model = Person
+
+# 2. Literka C
