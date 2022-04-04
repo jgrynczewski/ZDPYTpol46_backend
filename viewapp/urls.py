@@ -27,4 +27,6 @@ urlpatterns = [
     path('person3/<int:pk>/', views.PersonDetailView.as_view(), name='person-detail3'),
 
     path('create-person/', views.create_person, name='create_person'),
+    path('create-person2/', views.PersonCreateView.as_view(), name='create_person2'),
+    path('create-person3/', views.PersonCreateView2.as_view(), name='create_person3'),
 ]
