@@ -25,4 +25,6 @@ urlpatterns = [
     path('person/<int:id>/', views.person_detail, name='person-detail'),
     path('person2/<int:id>/', views.PersonView.as_view(), name='person-detail2'),
     path('person3/<int:pk>/', views.PersonDetailView.as_view(), name='person-detail3'),
+
+    path('create-person/', views.create_person, name='create_person'),
 ]

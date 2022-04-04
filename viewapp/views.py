@@ -1,11 +1,12 @@
 from django.shortcuts import render, HttpResponse
-from django.shortcuts import get_object_or_404
+from django.shortcuts import get_object_or_404, redirect
 from django import views
 
 from django.views.generic import TemplateView
 from django.views.generic import DetailView
 
 from viewapp.models import Person
+from viewapp.forms import PersonForm
 
 
 # function-based view
@@ -109,4 +110,26 @@ class PersonView(views.View):
 class PersonDetailView(DetailView):
     model = Person
 
+
 # 2. Literka C
+
+# function-based view
+def create_person(request):
+    if request.method == "POST":
+        form = PersonForm(request.POST)
+
+        if form.is_valid():
+            form.save()
+
+            return redirect('viewapp:hello')
+
+    form = PersonForm()
+    return render(
+        request,
+        'viewapp/person_form.html',
+        context={
+            'form': form,
+        }
+    )
+
+
