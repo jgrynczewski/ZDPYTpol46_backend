@@ -58,6 +58,7 @@ INSTALLED_APPS = [
     'formapp2.apps.Formapp2Config',
     'viewapp.apps.ViewappConfig',
     'taskapp2.apps.Taskapp2Config',
+    'authapp.apps.AuthappConfig',
 ]
 
 MIDDLEWARE = [

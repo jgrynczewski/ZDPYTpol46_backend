@@ -30,4 +30,5 @@ urlpatterns = [
     path('formapp2/', include('formapp2.urls')),
     path('viewapp/', include('viewapp.urls')),
     path('task2/', include('taskapp2.urls')),
+    path('auth/', include('authapp.urls')),
 ]
