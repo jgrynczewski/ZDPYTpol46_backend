@@ -57,6 +57,7 @@ INSTALLED_APPS = [
     'census.apps.CensusConfig',
     'formapp2.apps.Formapp2Config',
     'viewapp.apps.ViewappConfig',
+    'taskapp2.apps.Taskapp2Config',
 ]
 
 MIDDLEWARE = [

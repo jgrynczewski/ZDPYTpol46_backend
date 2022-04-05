@@ -1,4 +1,4 @@
-{% extends 'taskapp/layout.html' %}
+{% extends 'taskapp2/layout.html' %}
 
 {% block title %}Potwierdź usunięcie{% endblock %}
 
@@ -9,5 +9,5 @@
     <input type="submit" value="Potwierdź">
   </form>
 
-  <a href="{% url 'taskapp:task-list' %}"><button>Anuluj</button></a>
+  <a href="{% url 'taskapp2:task-list' %}"><button>Anuluj</button></a>
 {% endblock body %}
