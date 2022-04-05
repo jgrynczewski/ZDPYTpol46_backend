@@ -1,12 +1,13 @@
 from django.shortcuts import render, redirect
 from django.views import View
 
-from authapp.forms import UserForm
+from django.contrib.auth.models import User  # wbudowany w Django model użytkownika
+from django.contrib.auth.forms import UserCreationForm  # wbudowany w Django formularz tworzenia użytkownika
 
 
 class UserCreateView(View):
     def get(self, request):
-        form = UserForm()
+        form = UserCreationForm()
         return render(
             request,
             'authapp/user_form.html',
@@ -16,7 +17,7 @@ class UserCreateView(View):
         )
 
     def post(self, request):
-        form = UserForm(request.POST)
+        form = UserCreationForm(request.POST)
 
         if form.is_valid():
             form.save()
