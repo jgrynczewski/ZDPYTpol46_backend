@@ -4,7 +4,10 @@ from django.views import View
 
 from django.contrib.auth.models import User  # wbudowany w Django model użytkownika
 from django.contrib.auth.forms import UserCreationForm  # wbudowany w Django formularz tworzenia użytkownika
+from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
+
 
 class UserCreateView(View):
     def get(self, request):
@@ -66,3 +69,26 @@ def home(request):
         request,
         'authapp/home.html',
     )
+
+
+def login_view(request):
+    if request.method == "POST":
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+
+        user = authenticate(username=username, password=password)  # uwierzytelnienie
+
+        if user:
+            login(request, user)
+
+        return redirect('authapp:home')
+
+    return render(
+        request,
+        'authapp/login.html',
+    )
+
+
+def logout_view(request):
+    logout(request)
+    return redirect('authapp:login')
