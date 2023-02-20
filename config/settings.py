@@ -60,6 +60,8 @@ INSTALLED_APPS = [
     'taskapp2.apps.Taskapp2Config',
     'authapp.apps.AuthappConfig',
     'accounts.apps.AccountsConfig',
+
+    'stateapp.apps.StateappConfig',
 ]
 
 MIDDLEWARE = [

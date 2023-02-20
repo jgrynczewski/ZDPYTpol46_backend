@@ -33,4 +33,6 @@ urlpatterns = [
     path('task2/', include('taskapp2.urls')),
     path('auth/', include('authapp.urls')),
     path('accounts/', include('accounts.urls')),
+
+    path('state/', include('stateapp.urls')),
 ]
