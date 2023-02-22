@@ -1,7 +1,9 @@
 from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import permission_required
 
 from formapp2.models import Message
 from formapp2.forms import ContactForm, MessageForm
+
 
 def message_list(request):
     messages = Message.objects.all()
@@ -66,6 +68,7 @@ def contact2(request):
 
 
 # Formularz modelu
+@permission_required('formapp.add_message', raise_exception=True)
 def contact3(request):
 
     if request.method == "POST":

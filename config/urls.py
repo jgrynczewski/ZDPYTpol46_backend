@@ -35,4 +35,5 @@ urlpatterns = [
     path('accounts/', include('accounts.urls')),
 
     path('state/', include('stateapp.urls')),
+    path('auth2/', include('authapp2.urls')),
 ]

@@ -72,21 +72,21 @@ def home(request):
 
 
 def login_view(request):
-    if request.method == "POST":
-        username = request.POST.get('username')
-        password = request.POST.get('password')
+            if request.method == "POST":
+                username = request.POST.get('username')
+                password = request.POST.get('password')
 
-        user = authenticate(username=username, password=password)  # uwierzytelnienie
+                user = authenticate(username=username, password=password)  # uwierzytelnienie
 
-        if user:
-            login(request, user)
+                if user:
+                    login(request, user)
 
-        return redirect('authapp:home')
+                return redirect('authapp:home')
 
-    return render(
-        request,
-        'authapp/login.html',
-    )
+            return render(
+                request,
+                'authapp/login.html',
+            )
 
 
 def logout_view(request):

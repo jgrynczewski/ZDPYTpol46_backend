@@ -62,6 +62,7 @@ INSTALLED_APPS = [
     'accounts.apps.AccountsConfig',
 
     'stateapp.apps.StateappConfig',
+    'authapp2.apps.Authapp2Config',
 ]
 
 MIDDLEWARE = [
